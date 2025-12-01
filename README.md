@@ -1,3 +1,2 @@
-# This is Julian Doehl's Website
+# Julian Döhl - Personal Website
 
-Under construction

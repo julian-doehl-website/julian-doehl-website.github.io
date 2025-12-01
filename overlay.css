@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: url('snow.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+.santa-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.overlay-container {
+    cursor: pointer;
+}
+
+.bouncing-santa {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    image-rendering: auto;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.message-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.christmas-message {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    color: #ffffff;
+    line-height: 1.6;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: text-glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow-pulse {
+    from {
+        text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 255, 255, 0.4),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(255, 255, 255, 1),
+            0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 40px rgba(255, 255, 255, 0.6),
+            0 0 50px rgba(255, 255, 255, 0.4),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.glow-text {
+    color: #ffd700;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.4),
+        0 0 40px rgba(255, 215, 0, 0.2),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    from {
+        text-shadow: 
+            0 0 10px rgba(255, 215, 0, 0.8),
+            0 0 20px rgba(255, 215, 0, 0.6),
+            0 0 30px rgba(255, 215, 0, 0.4),
+            0 0 40px rgba(255, 215, 0, 0.2),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(255, 215, 0, 1),
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 40px rgba(255, 215, 0, 0.6),
+            0 0 50px rgba(255, 215, 0, 0.4),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.click-link {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    animation: link-glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes link-glow-pulse {
+    from {
+        text-shadow: 
+            0 0 10px rgba(255, 215, 0, 0.8),
+            0 0 20px rgba(255, 215, 0, 0.6),
+            0 0 30px rgba(255, 215, 0, 0.4),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(255, 215, 0, 1),
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 40px rgba(255, 215, 0, 0.6),
+            0 0 50px rgba(255, 215, 0, 0.4),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.click-link:hover {
+    color: #ffed4e;
+    text-shadow: 
+        0 0 25px rgba(255, 215, 0, 1),
+        0 0 35px rgba(255, 215, 0, 0.9),
+        0 0 45px rgba(255, 215, 0, 0.7),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.click-link:active {
+    color: #ffaa00;
+    transform: scale(0.98);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .bouncing-santa {
+        width: 120px;
+    }
+    
+    .message-container {
+        padding: 25px 30px;
+        margin: 0 15px;
+        margin-bottom: 30px;
+    }
+    
+    .christmas-message {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+    
+    .button-container {
+        bottom: 40px;
+        left: 50%;
+        right: auto;
+        width: calc(100% - 30px);
+        max-width: 600px;
+    }
+    
+    .click-link {
+        padding: 12px 25px;
+        font-size: clamp(0.9rem, 4vw, 1.3rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .bouncing-santa {
+        width: 100px;
+    }
+    
+    .message-container {
+        padding: 20px 25px;
+        margin: 0 10px;
+        margin-bottom: 20px;
+    }
+    
+    .christmas-message {
+        font-size: clamp(0.9rem, 6vw, 1.3rem);
+        line-height: 1.5;
+    }
+    
+    .button-container {
+        bottom: 30px;
+        width: calc(100% - 20px);
+    }
+    
+    .click-link {
+        padding: 10px 20px;
+        font-size: clamp(0.8rem, 5vw, 1.2rem);
+    }
+}
+
